@@ -1,5 +1,9 @@
+if (!require("data.table")) install.packages("data.table")
+library("data.table")
+if (!require("readr")) install.packages("readr")
+library("readr")
 data.table::fread("UNRATE.csv")
 DF <- fread("UNRATE.csv", header="auto", data.table=FALSE)
-FREAD_READ_TIME <- (proc.time() - ptm)
 ptm <- proc.time()
+FREAD_READ_TIME <- (proc.time() - ptm)
 FREAD_READ_TIME
